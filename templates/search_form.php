@@ -12,8 +12,8 @@ $showResults = false;
 
 if (isset($_GET['search_filed'])) {
     $keywords = isset($_GET['search_filed']) ? strip_tags($_GET['search_filed']) : '';
-    $brand = isset($_GET['brand']) ? $_GET['brand'] : '';
-    $size = isset($_GET['size']) ? $_GET['size'] : '';
+    $brand = isset($_GET['brand']) ? (int)$_GET['brand'] : '';
+    $size = isset($_GET['size']) ? (int)$_GET['size'] : '';
 
     if (!$keywords && !$brand && !$size) {
         echo '<span style="color: red">Please select at least one of search fields</span>';

@@ -15,11 +15,11 @@ class Search
      */
     private $searchText;
     /**
-     * @var integer
+     * @var string
      */
     private $brand;
     /**
-     * @var integer
+     * @var string
      */
     private $size;
 
@@ -42,7 +42,7 @@ class Search
      */
     private function prepareConditions()
     {
-        $subquery = "SELECT p.id FROM products as p ";
+        $subquery = 'SELECT p.id FROM products as p ';
 
         if (!empty($this->size)) {
             $subquery .= 'INNER JOIN product_sizes as ps ON p.id = ps.product_id AND ps.size_id = ' . $this->size;
@@ -87,6 +87,7 @@ class Search
     }
 
     /**
+     * Performs search
      * @return array
      */
     public function search()

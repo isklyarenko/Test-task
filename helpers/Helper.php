@@ -17,7 +17,7 @@ class Helper
     public static function getBrands()
     {
         $result = [];
-        $brands = DB::query("SELECT id, name FROM brands ORDER BY name ASC");
+        $brands = DB::query('SELECT id, name FROM brands ORDER BY name ASC');
 
         if ($brands) {
             foreach ($brands as $brand) {
@@ -35,7 +35,7 @@ class Helper
     public static function getSizes()
     {
         $result = [];
-        $sizes = DB::query("SELECT id, name FROM sizes ORDER BY id ASC");
+        $sizes = DB::query('SELECT id, name FROM sizes ORDER BY id ASC');
 
         if ($sizes) {
             foreach ($sizes as $size) {
